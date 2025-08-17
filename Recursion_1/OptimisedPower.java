@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion_1;
 
 public class OptimisedPower {
     public static int power(int x, int n){

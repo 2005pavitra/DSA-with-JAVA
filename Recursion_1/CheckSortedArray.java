@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion_1;
 
 public class CheckSortedArray {
     public static boolean isSorted(int[] arr, int i){

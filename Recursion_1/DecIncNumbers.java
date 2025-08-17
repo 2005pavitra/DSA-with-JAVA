@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion_1;
 
 public class DecIncNumbers {
     public static void decrease(int n){
