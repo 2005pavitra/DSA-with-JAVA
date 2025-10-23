@@ -2,7 +2,7 @@ package DivideAndConquer;
 
 public class MergeSort {
 
-    public static void merge(int arr[], int si, int mid, int ei) { // <-- correct parameter order
+    public static void merge(int arr[], int si, int mid, int ei) {
         int temp[] = new int[ei - si + 1];
         int i = si;
         int j = mid + 1;
@@ -42,7 +42,7 @@ public class MergeSort {
         mergeSort(arr, si, mid);
         mergeSort(arr, mid + 1, ei);
 
-        merge(arr, si, mid, ei); // <-- correct call
+        merge(arr, si, mid, ei);
     }
 
     public static void main(String[] args) {
