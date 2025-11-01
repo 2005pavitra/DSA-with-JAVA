@@ -17,6 +17,11 @@ public class Basics {
         System.out.println(S3.rno);
         System.out.println(S3.marks);
 
+        Student S4 = new Student();
+        S4.name = "S4";
+        Student S5 = S4;
+        System.out.println(S5.name);
+
     }
 
 }
