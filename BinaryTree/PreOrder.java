@@ -30,13 +30,15 @@ public class PreOrder {
             return newNode;
         }
 
-        public static void preOrder(Node root){
+        public static int preOrder(Node root){
             if(root == null){
-                return;
+                return -1;
             }
             System.out.print(root.data+" ");
             preOrder(root.left);
             preOrder(root.right);
+
+            return root.data;
         }
     }
 
