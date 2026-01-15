@@ -4,16 +4,16 @@ import java.util.*;
 
 // Definition for the Binary Tree Node
 // (If you have a separate Node class, you can remove this inner class)
-class Node {
-    int data;
-    Node left, right;
-
-    Node(int val) {
-        this.data = val;
-        this.left = null;
-        this.right = null;
-    }
-}
+//class Node {
+//    int data;
+//    Node left, right;
+//
+//    Node(int val) {
+//        this.data = val;
+//        this.left = null;
+//        this.right = null;
+//    }
+//}
 
 public class TopView {
 
