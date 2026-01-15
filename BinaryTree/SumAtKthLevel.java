@@ -1,6 +1,9 @@
 package BinaryTree;
+import java.util.*;
 
-public class KLevel {
+//public class SumAtKthLevel package BinaryTree;
+
+public class SumAtKthLevel {
 
     // Definition for Binary Tree Node
     static class Node {
@@ -21,22 +24,21 @@ public class KLevel {
      * @param level The current level of this node (starts at 1 usually)
      * @param k     The target level we want to print
      */
-    public static void printK(Node root, int level, int k) {
+    public static int sum(Node root, int level, int k) {
         // Base Case: If node is null, stop.
         if (root == null) {
-            return;
+            return 0;
         }
 
         // Target Case: If current level matches K, print data.
         if (level == k) {
-            System.out.print(root.data + " ");
-//            System.out.println(sum);
-            return; // Optimization: No need to search deeper once we hit level K
+            return root.data;
         }
 
         // Recursive Step: Go to children with incremented level
-        printK(root.left, level + 1, k);
-        printK(root.right, level + 1, k);
+        int left = sum(root.left, level + 1, k);
+        int right = sum(root.right, level + 1, k);
+        return left + right;
     }
 
     public static void main(String[] args) {
@@ -59,10 +61,10 @@ public class KLevel {
         root.left.left.left = new Node(7);
 
         int K = 3;
-        System.out.println("Nodes at level " + K + ":");
 
         // We assume Root is at Level 1.
         // If you consider Root at Level 0, pass 0 as the second argument.
-        printK(root, 1, K);
+        int sum = sum(root, 1, K);
+        System.out.println("Nodes at level " + K + ":"+ " and sum is: "+sum);
     }
 }
