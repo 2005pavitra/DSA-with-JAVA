@@ -3,39 +3,46 @@ package Codeforces;
 import java.util.*;
 
 public class CoverInWater1900A{
-    public static void main(String[] arsgs){
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
 
         while(t-->0){
             int n = sc.nextInt();
-            String s= sc.next();
+            String s = sc.next();
 
-            int i = 0;
-             int cnt = 0;
             int dots = 0;
-            while(i< s.length()){
-                if(s.charAt(i) == '.'){
-                    while(i<s.length() && s.charAt(i) == '.'){
-                        cnt++;
-                        i++;
+            int cnt = 0;
+            for(int i = 0; i< n; i++){
+                char c = s.charAt(i);
+                if(c == '.'){
+                    dots++;
 
-                        if(cnt ==3){
-                            System.out.println("2");
-                            return;
-                        }
+                    if(dots>= 3 ){
+                        cnt = 2;
+//                        System.out.println("2");
+
+                        break;
                     }
-
-                    dots+=cnt;
-
                 }else{
-                    cnt = 0;
-                    i++;
+                    cnt+=dots;
+                    dots = 0;
                 }
 
-            }
+                if( i == n-1){
+                    cnt += dots;
+                }
 
-            System.out.println(dots);
+
+
+            }
+            if(cnt == 2){
+                System.out.println("2");
+            }else{
+                System.out.println(cnt);
+            }
+//            System.out.println(cnt);
         }
+
     }
 }
